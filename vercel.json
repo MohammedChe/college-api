@@ -4,6 +4,7 @@
       { "src": "/api/index.php", "use": "vercel-php-mo@0.14.0" },
       { "src": "/public/**", "use": "@vercel/static" }
   ],
+  "rewrites": [{"source": "/api/(.*)", "destination": "/api/api/$1"}],
   "routes": [
       {
           "src": "/(css|js|images)/(.*)",
@@ -14,7 +15,6 @@
           "dest": "/api/index.php"
       }
   ],
-  "rewrites": [{"source": "/api/(.*)", "destination": "/api/api/$1"}],
   "env": {
       "APP_CONFIG_CACHE": "/tmp/config.php",
       "APP_EVENTS_CACHE": "/tmp/events.php",
