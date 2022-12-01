@@ -4,13 +4,6 @@
       { "src": "/api/index.php", "use": "vercel-php-mo@0.14.0" },
       { "src": "/public/**", "use": "@vercel/static" }
   ],
-  "redirects": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/api/$1",
-      "permanent": true
-    }
-  ],
   "routes": [
       {
           "src": "/(css|js|images)/(.*)",
