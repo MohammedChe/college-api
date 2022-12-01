@@ -4,6 +4,11 @@
       { "src": "/api/index.php", "use": "vercel-php-mo@0.14.0" },
       { "src": "/public/**", "use": "@vercel/static" }
   ],
+  "rewrites": [
+        { 
+            "source": "/api/(.*)", "destination": "/api/api/(.*)" 
+        }
+    ],
   "routes": [
       {
           "src": "/(css|js|images)/(.*)",
@@ -12,11 +17,6 @@
       {
           "src": "/(.*)",
           "dest": "/api/index.php"
-      }
-  ],
-  "rewrites": [
-      { 
-          "source": "/api/(.*)", "destination": "/api/api/(.*)" 
       }
   ],
   "env": {
