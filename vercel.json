@@ -14,6 +14,11 @@
           "dest": "/api/index.php"
       }
   ],
+  "rewrites": [
+        { 
+            "source": "/api/(.*)", "destination": "/api/api/(.*)" 
+        }
+    ],
   "env": {
       "APP_CONFIG_CACHE": "/tmp/config.php",
       "APP_EVENTS_CACHE": "/tmp/events.php",
