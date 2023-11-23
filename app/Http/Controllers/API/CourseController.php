@@ -9,6 +9,7 @@ use App\Models\Course;
 
 class CourseController extends Controller
 {
+  
     public function index()
     {
         $courses = Course::all()->load('enrolments.lecturer');
