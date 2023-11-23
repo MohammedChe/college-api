@@ -4,6 +4,16 @@
       { "src": "/api/index.php", "use": "vercel-php-mo@0.18.0" },
       { "src": "/public/**", "use": "@vercel/static" }
   ],
+  "routes": [
+      {
+          "src": "/(css|js|images)/(.*)",
+          "dest": "public/$1/$2"
+      },
+      {
+          "src": "/(.*)",
+          "dest": "/api/index.php"
+      }
+  ],
   "headers": [
     {
       "source": "/api/(.*)",
@@ -14,16 +24,6 @@
         { "key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" }
       ]
     }
-  ],
-  "routes": [
-      {
-          "src": "/(css|js|images)/(.*)",
-          "dest": "public/$1/$2"
-      },
-      {
-          "src": "/(.*)",
-          "dest": "/api/index.php"
-      }
   ],
   "env": {
       "APP_CONFIG_CACHE": "/tmp/config.php",
